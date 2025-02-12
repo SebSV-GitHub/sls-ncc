@@ -1,0 +1,19 @@
+{
+	"name": "test",
+	"private": true,
+	"type": "module",
+	"exports": "./index.js",
+	"scripts": {
+		"start": "NODE_NO_WARNINGS=1 node --loader ts-node/esm index.ts"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"dependencies": {
+		"@sebsv/node-package-template": "file:../../dist"
+	},
+	"devDependencies": {
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.3"
+	}
+}
