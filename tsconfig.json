@@ -1,18 +1,14 @@
 {
 	"compilerOptions": {
-		"target": "ES2022",
+		"target": "ES2016",
 		"module": "NodeNext",
 		"moduleResolution": "nodenext",
-		"allowJs": true, // TODO: Remove this, it's just used as demonstration for module typing
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
 		"skipLibCheck": true,
 		"outDir": "dist",
 		"declaration": true,
-		"paths": {
-			"@/": ["./src/*"]
-		},
 		"typeRoots": ["./node_modules/@types", "./src/types"]
 	},
 	"ts-node": {

@@ -47,7 +47,7 @@ const license: TaskFunction = () => {
 };
 
 const run: TaskFunction = async () => {
-	const { stdout, stderr } = await asyncExec("npm start", {
+	const { stdout, stderr } = await asyncExec("npm i && npm run dev", {
 		cwd: "tests/integration",
 	});
 

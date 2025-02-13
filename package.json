@@ -1,8 +1,8 @@
 {
-	"name": "@sebsv/node-package-template",
-	"version": "2.0.2",
+	"name": "@sebsv/sls-ncc",
+	"version": "1.0.0",
 	"type": "module",
-	"description": "Node package template",
+	"description": "A Serverless framework plugin, to compile the service functions with ncc",
 	"exports": "./index.js",
 	"scripts": {
 		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
@@ -14,32 +14,36 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/SebSV-GitHub/Node-package-template.git"
+		"url": "git+ssh://git@github.com/SebSV-GitHub/sls-ncc.git"
 	},
 	"keywords": [
-		"NPM",
-		"Package",
-		"Template"
+		"Serverless framework",
+		"plugin",
+		"TypeScript",
+		"ncc"
 	],
 	"author": "Sebastián Suárez Valencia <contact@sebsv.com> (https://www.sebsv.com)",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/SebSV-GitHub/Node-package-template/issues"
+		"url": "https://github.com/SebSV-GitHub/sls-ncc/issues"
 	},
-	"homepage": "https://github.com/SebSV-GitHub/Node-package-template#readme",
+	"homepage": "https://github.com/SebSV-GitHub/sls-ncc#readme",
 	"engines": {
 		"node": ">=22"
 	},
 	"devDependencies": {
 		"@jest/globals": "^29.7.0",
+		"@types/archiver": "^6.0.3",
 		"@types/gulp": "^4.0.17",
 		"@types/lodash": "^4.17.15",
+		"@types/serverless": "^3.12.27",
 		"gulp": "^5.0.0",
 		"gulp-typescript": "^6.0.0-alpha.1",
 		"husky": "^9.1.6",
 		"jest": "^29.7.0",
 		"lint-staged": "^15.2.10",
 		"prettier": "^3.3.3",
+		"serverless": "^4.6.2",
 		"ts-jest": "^29.2.5",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.6.3",
@@ -47,7 +51,11 @@
 		"xo": "^0.59.3"
 	},
 	"dependencies": {
-		"date-fns": "^4.1.0",
+		"@vercel/ncc": "^0.38.3",
+		"archiver": "^7.0.1",
 		"lodash": "^4.17.21"
+	},
+	"peerDependencies": {
+		"serverless": "^4.6.2"
 	}
 }
