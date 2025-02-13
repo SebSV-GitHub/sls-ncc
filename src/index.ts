@@ -1,11 +1,11 @@
-/* eslint-disable import/no-duplicates */
 import { join } from "node:path";
 import { createWriteStream } from "node:fs";
 import ncc from "@vercel/ncc";
 import _ from "lodash";
 import archiver from "archiver";
 import type Serverless from "serverless";
-import type { Options } from "serverless";
+
+const packageJson = `{"type": "module"}`;
 
 class Ncc {
 	static tags = ["build"];
@@ -53,6 +53,7 @@ class Ncc {
 						});
 
 						archive.append(code, { name: `${handlerFile}.js` });
+						archive.append(packageJson, { name: "package.json" });
 
 						void archive.finalize();
 					});
