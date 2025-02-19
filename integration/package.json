@@ -3,18 +3,13 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"prestart": "npm i",
-		"start": "tsx index.ts"
+		"prestart": "npm i --install-links",
+		"start": "sls package"
 	},
 	"engines": {
 		"node": ">=22"
 	},
 	"dependencies": {
-		"@sebsv/node-package-typescript-template": "file:../"
-	},
-	"devDependencies": {
-		"@tsconfig/node22": "^22.0.0",
-		"tsx": "^4.19.2",
-		"typescript": "^5.7.3"
+		"@sebsv/sls-ncc": "file:../"
 	}
 }

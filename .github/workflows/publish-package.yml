@@ -1,11 +1,11 @@
-name: Public package to NPM
+name: Publish package
 
 on:
   release:
     types: [created]
 
 jobs:
-  build:
+  npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 22
           registry-url: https://registry.npmjs.org/
-      - run: npm i
+      - run: npm ci
       - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
